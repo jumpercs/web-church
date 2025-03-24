@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "inlineSources": true,
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    },
+    "rootDirs": [
+      "src"
+    ],
+    "sourceMap": true,
+    "sourceRoot": "/",
+    "strictNullChecks": true
+  },
+  "controllerPathGlobs": [
+    "src/controllers/**/*_controller.ts"
+  ],
+  "entryFile": "src/main/server.ts",
+  "noImplicitAdditionalProperties": "silently-remove-extras",
+  "routes": {
+    "authenticationModule": "src/config/auth.ts",
+    "iocModule": "src/config/ioc.ts",
+    "routesDir": "src/routes",
+    "routesFileName": "routes.generated.ts"
+  },
+  "spec": {
+    "bodyCoercion": false,
+    "outputDirectory": "src/docs",
+    "securityDefinitions": {
+      "Bearer": {
+        "description": "Enter 'Bearer' [space] and then your token in the text input below. Example: \\\"Bearer abc123\\\"",
+        "in": "header",
+        "name": "Authorization",
+        "type": "apiKey"
+      }
+    },
+    "spec": {
+      "servers": [
+        {
+          "description": "Local development",
+          "url": "http://localhost:4000"
+        }
+      ]
+    },
+    "specVersion": 3
+  }
+}

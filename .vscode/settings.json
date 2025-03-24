@@ -1,0 +1,29 @@
+{
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
+  "i18n-ally.namespace": true,
+  "i18n-ally.theme.annotation": "rgba(24, 144, 255, 0.8)",
+  "i18n-ally.keystyle": "nested",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "Cmms",
+    "Gantt",
+    "Highcharts",
+    "Pino",
+    "tsoa",
+    "tsyringe"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "exec": "yarn spec-and-routes-gen && yarn build && npx ts-node dist/main/server.js",
+  "ext": ".ts,.js,.tsx",
+  "ignore": [
+    "src/docs/**",
+    "src/routes/routes.generated.ts"
+  ],
+  "watch": [
+    "src"
+  ]
+}

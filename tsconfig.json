@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es2021",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "rootDirs": ["src"],
+    "baseUrl": "./src",
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "inlineSources": true,
+    "sourceRoot": "",
+    "paths": {
+      "@/*": ["*"]
+    },
+    
+    "jsx": "react",
+    "jsxFactory": "jsx"
+  },
+  "include": ["src", "src/docs/*.json"],
+  "exclude": ["node_modules", "dist"]
+}
