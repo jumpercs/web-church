@@ -9,8 +9,8 @@
     }
   },
   "scripts": {
-    "start": "yarn spec-and-routes-gen && yarn build && node --stack-size=10240 --max-http-header-size=32768 dist/main/server.js",
-    "build": "yarn clean && tsc",
+    "start": "npm run spec-and-routes-gen && npm run build && node --stack-size=10240 --max-http-header-size=32768 dist/main/server.js",
+    "build": "npm run clean && tsc",
     "clean": "rimraf dist",
     "dev": "nodemon",
     "lint": "eslint",

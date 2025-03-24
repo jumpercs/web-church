@@ -4,9 +4,9 @@ FROM node:22.2.0-alpine AS builder
 WORKDIR /app
 
 # Copy package files
-COPY package.json yarn.lock ./
+COPY package.json ./
 
-# Install dependencies using npm instead of yarn to avoid CodeArtifact issues
+# Install dependencies using npm
 RUN npm config set registry https://registry.npmjs.org && \
     npm install
 
@@ -21,10 +21,10 @@ FROM node:22.2.0-alpine
 
 WORKDIR /app
 
-# Copy package files and install production dependencies only
-COPY package.json package-lock.json* ./
+# Copy package files and install production dependencies
+COPY package.json package-lock.json ./
 RUN npm config set registry https://registry.npmjs.org && \
-    npm ci --only=production
+    npm ci --omit=dev
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
