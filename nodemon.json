@@ -1,5 +1,5 @@
 {
-  "exec": "yarn spec-and-routes-gen && yarn build && npx ts-node dist/main/server.js",
+  "exec": "npm run spec-and-routes-gen && npm run build && npx ts-node dist/main/server.js",
   "ext": ".ts,.js,.tsx",
   "ignore": [
     "src/docs/**",
