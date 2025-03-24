@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   web-church:
+    image: web-church
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,4 +13,3 @@ services:
       - MERCADO_PAGO_ACCESS_TOKEN=${MERCADO_PAGO_ACCESS_TOKEN}
       - MERCADO_PAGO_PUBLIC_KEY=${MERCADO_PAGO_PUBLIC_KEY}
     restart: always
-    container_name: web-church
