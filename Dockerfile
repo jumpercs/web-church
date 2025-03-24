@@ -6,16 +6,15 @@ WORKDIR /app
 # Copy package files
 COPY package.json yarn.lock ./
 
-# Install dependencies with npm registry instead of CodeArtifact
-# This avoids the 401 Unauthorized error with @faker-js/faker
-RUN yarn config set registry https://registry.npmjs.org && \
-    yarn install --frozen-lockfile
+# Install dependencies using npm instead of yarn to avoid CodeArtifact issues
+RUN npm config set registry https://registry.npmjs.org && \
+    npm install
 
 # Copy source code
 COPY . .
 
 # Generate routes and build the application
-RUN yarn spec-and-routes-gen && yarn build
+RUN npm run spec-and-routes-gen && npm run build
 
 # Production stage
 FROM node:22.2.0-alpine
@@ -23,9 +22,9 @@ FROM node:22.2.0-alpine
 WORKDIR /app
 
 # Copy package files and install production dependencies only
-COPY package.json yarn.lock ./
-RUN yarn config set registry https://registry.npmjs.org && \
-    yarn install --frozen-lockfile --production
+COPY package.json package-lock.json* ./
+RUN npm config set registry https://registry.npmjs.org && \
+    npm ci --only=production
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
