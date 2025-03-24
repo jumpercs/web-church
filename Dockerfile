@@ -29,7 +29,7 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/src ./src
 
 # Set environment variables
-ENV NODE_ENV=production
+ENV ENV=production
 
 # Expose the port your app runs on
 EXPOSE 3000

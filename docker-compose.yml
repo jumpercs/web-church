@@ -8,7 +8,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      - ENV=production
       - MERCADO_PAGO_ACCESS_TOKEN=${MERCADO_PAGO_ACCESS_TOKEN}
-    deploy:
-      replicas: 1
+      - MERCADO_PAGO_PUBLIC_KEY=${MERCADO_PAGO_PUBLIC_KEY}
+    restart: always
+    container_name: web-church
